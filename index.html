@@ -18,7 +18,9 @@ section{padding:90px 0;border-top:1px solid rgba(255,255,255,.07)}.section-head{
 .creative-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:18px}.design-card{background:var(--card);border:1px solid var(--line);border-radius:26px;overflow:hidden;min-height:300px;position:relative;transition:.25s}.design-card:hover{transform:translateY(-7px)}.design-card img{width:100%;height:100%;object-fit:cover;display:block}.design-card.wolt img{object-fit:contain;background:#05bce8}.tall{grid-row:span 2}.wide{grid-column:span 2}.overlay{position:absolute;left:0;right:0;bottom:0;padding:22px;background:linear-gradient(transparent,rgba(0,0,0,.86))}
 .sports-row{display:flex;gap:16px;overflow-x:auto;padding-bottom:16px}.sports-card{min-width:260px;border-radius:24px;overflow:hidden;background:#111;border:1px solid var(--line)}.sports-card img{width:100%;display:block}.sports-card h3{padding:14px}
 .logo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.logo-card{border-radius:26px;overflow:hidden;background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between}.logo-card img{width:100%;height:280px;object-fit:contain;background:#050506;padding:40px}.logo-card img.logo-brain{padding:56px}.logo-card img.logo-infd{padding:52px}.logo-card img.logo-zip{padding:48px}.logo-card h3{padding:18px}
-.about-grid{display:grid;grid-template-columns:.55fr 1fr;gap:35px;align-items:center}.about-photo{border-radius:30px;overflow:hidden;border:1px solid var(--line);background:#0b0c12}.about-photo img{width:100%;display:block}.about-card{border:1px solid var(--line);border-radius:34px;background:rgba(255,255,255,.035);padding:40px}.about-text{color:#d6d8e4;font-size:19px;line-height:1.8}.pill-grid{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.pill{padding:12px 15px;border-radius:999px;border:1px solid rgba(57,232,255,.45);background:rgba(57,232,255,.08);font-weight:900}.contact-card{border-radius:34px;border:1px solid var(--line);background:radial-gradient(circle at 85% 35%,rgba(124,60,255,.23),transparent 35%),rgba(255,255,255,.035);padding:45px;display:grid;grid-template-columns:1fr 1fr;gap:25px}.contact-links{display:flex;flex-direction:column;gap:14px;justify-content:center}footer{text-align:center;color:#747684;padding:30px;border-top:1px solid var(--line)}
+.about-grid{display:grid;grid-template-columns:.55fr 1fr;gap:35px;align-items:center}.about-photo{position:relative;perspective:900px}.photo-frame{border-radius:30px;overflow:hidden;border:1px solid var(--line);background:#0b0c12}.about-photo img{width:100%;display:block;transition:transform .5s cubic-bezier(.22,1,.36,1);will-change:transform}
+.photo-scribble{position:absolute;inset:-16px;width:calc(100% + 32px);height:calc(100% + 32px);pointer-events:none}
+.photo-scribble path{fill:none;stroke:var(--cyan);stroke-width:3;stroke-linecap:round;filter:drop-shadow(0 0 6px rgba(57,232,255,.55));transition:stroke-dashoffset 1.6s cubic-bezier(.4,0,.2,1)}.about-card{border:1px solid var(--line);border-radius:34px;background:rgba(255,255,255,.035);padding:40px}.about-text{color:#d6d8e4;font-size:19px;line-height:1.8}.pill-grid{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.pill{padding:12px 15px;border-radius:999px;border:1px solid rgba(57,232,255,.45);background:rgba(57,232,255,.08);font-weight:900}.contact-card{border-radius:34px;border:1px solid var(--line);background:radial-gradient(circle at 85% 35%,rgba(124,60,255,.23),transparent 35%),rgba(255,255,255,.035);padding:45px;display:grid;grid-template-columns:1fr 1fr;gap:25px}.contact-links{display:flex;flex-direction:column;gap:14px;justify-content:center}footer{text-align:center;color:#747684;padding:30px;border-top:1px solid var(--line)}
 [data-lang-content]{display:none}body.lang-sq [data-lang-content="sq"],body.lang-en [data-lang-content="en"]{display:contents}
 @media(max-width:900px){.links a{display:none}.hero-grid,.contact-card,.about-grid{grid-template-columns:1fr}.creative-grid,.logo-grid{grid-template-columns:1fr}.wide{grid-column:span 1}.section-head{display:block}.video-card{min-width:82vw}.video-card video{height:560px}.hero h1{letter-spacing:-4px}.note-grid{margin-left:35px;grid-template-columns:1fr}.content-board:before{font-size:55px;left:-35px}.creative-grid .tall{grid-row:span 1}}
 
@@ -70,11 +72,30 @@ section{padding:90px 0;border-top:1px solid rgba(255,255,255,.07)}.section-head{
 .skill-tag{padding:11px 14px;border-radius:999px;border:1px solid rgba(57,232,255,.35);background:rgba(57,232,255,.08);font-weight:900;font-size:14px}
 @media(max-width:900px){.timeline-grid,.edu-grid,.skills-wrap{grid-template-columns:1fr}}
 
+.torn-divider{position:relative;height:30px;background:linear-gradient(90deg,rgba(138,77,255,.22),rgba(57,232,255,.14));margin:0}
+.torn-divider:before,.torn-divider:after{content:"";position:absolute;left:0;right:0;height:14px;background:inherit}
+.torn-divider:before{top:-13px;-webkit-mask-image:linear-gradient(-45deg,transparent 10px,#000 0),linear-gradient(45deg,transparent 10px,#000 0);mask-image:linear-gradient(-45deg,transparent 10px,#000 0),linear-gradient(45deg,transparent 10px,#000 0);-webkit-mask-position:bottom left;mask-position:bottom left;-webkit-mask-size:20px 20px;mask-size:20px 20px;-webkit-mask-repeat:repeat-x;mask-repeat:repeat-x}
+.torn-divider:after{bottom:-13px;-webkit-mask-image:linear-gradient(-135deg,transparent 10px,#000 0),linear-gradient(135deg,transparent 10px,#000 0);mask-image:linear-gradient(-135deg,transparent 10px,#000 0),linear-gradient(135deg,transparent 10px,#000 0);-webkit-mask-position:top left;mask-position:top left;-webkit-mask-size:20px 20px;mask-size:20px 20px;-webkit-mask-repeat:repeat-x;mask-repeat:repeat-x}
+
+.marquee-band{position:relative;overflow:hidden;background:linear-gradient(90deg,rgba(138,77,255,.2),rgba(57,232,255,.13));padding:20px 0}
+.marquee-band:before,.marquee-band:after{content:"";position:absolute;left:0;right:0;height:14px;background:inherit;z-index:2}
+.marquee-band:before{top:-13px;-webkit-mask-image:linear-gradient(-45deg,transparent 10px,#000 0),linear-gradient(45deg,transparent 10px,#000 0);mask-image:linear-gradient(-45deg,transparent 10px,#000 0),linear-gradient(45deg,transparent 10px,#000 0);-webkit-mask-position:bottom left;mask-position:bottom left;-webkit-mask-size:20px 20px;mask-size:20px 20px;-webkit-mask-repeat:repeat-x;mask-repeat:repeat-x}
+.marquee-band:after{bottom:-13px;-webkit-mask-image:linear-gradient(-135deg,transparent 10px,#000 0),linear-gradient(135deg,transparent 10px,#000 0);mask-image:linear-gradient(-135deg,transparent 10px,#000 0),linear-gradient(135deg,transparent 10px,#000 0);-webkit-mask-position:top left;mask-position:top left;-webkit-mask-size:20px 20px;mask-size:20px 20px;-webkit-mask-repeat:repeat-x;mask-repeat:repeat-x}
+.marquee-track{display:flex;width:max-content;gap:18px;align-items:center;animation:marquee 26s linear infinite;font-weight:900;text-transform:uppercase;letter-spacing:2px;font-size:15px;white-space:nowrap}
+.marquee-track b{color:var(--cyan);font-size:18px}
+.marquee-band:hover .marquee-track{animation-play-state:paused}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.marquee-track{animation:none}}
+
 </style></head>
 <body class="lock lang-sq"><div class="bg"></div>
 <div class="gate" id="gate"><div class="laptop"><div class="screen"><div><h1 data-i18n="choose">Choose Language</h1><div class="retro"><div class="retro-card" onclick="enterSite('sq')"><div><div class="flag">🇦🇱</div><b>Shqip</b></div></div><div class="retro-card" onclick="enterSite('en')"><div><div class="flag">🇬🇧</div><b>English</b></div></div></div></div></div></div></div>
 <nav><div class="container nav-inner"><div class="brand"><div class="mark">EA</div><div>Endrit Akinci<small>Video Editor & Creative Content Creator</small></div></div><div class="links"><a href="#work" data-i18n="navWork">Punët</a><a href="#design" data-i18n="navDesign">Dizajne</a><a href="#logos" data-i18n="navLogos">Logo</a><a href="#experience" data-i18n="navExperience">Përvoja</a><a href="#education" data-i18n="navEducation">Edukimi</a><a href="#about" data-i18n="navAbout">Rreth meje</a><a href="#contact" data-i18n="navContact">Kontakt</a><button class="lang-toggle" onclick="toggleLang()">EN / SQ</button></div></div></nav>
 <main class="hero" id="home"><div class="container hero-grid"><div><div class="eyebrow" data-i18n="hello">Përshëndetje, jam</div><h1>Endrit<br><span>Akinci.</span></h1><div class="role">Video Editor & Creative Content Creator</div><p data-i18n="heroText">Krijoj përmbajtje që tërheq vëmendjen, prej video editing deri te social media designs, content creation dhe komunikim vizual për brende e biznese.</p><div style="display:flex;gap:13px;flex-wrap:wrap"><a class="btn primary" href="#work" data-i18n="viewWork">Shiko punët</a><a class="btn" href="#contact" data-i18n="contactMe">Kontakto</a></div></div><div class="content-board"><div class="note-grid"><div class="note" data-i18n="n1" style="--r:-2deg">Video Editing</div><div class="note" data-i18n="n2" style="--r:2deg">Social Media Content</div><div class="note" data-i18n="n3" style="--r:1deg">Graphic Design</div><div class="note" data-i18n="n4" style="--r:-1deg">Logo Concepts</div><div class="note" data-i18n="n5" style="--r:2deg">Sports Concepts</div><div class="note" data-i18n="n6" style="--r:-2deg">Creative Collaboration</div></div></div></div></main>
+<div class="marquee-band"><div class="marquee-track">
+<b>✦</b><span data-i18n="n1">Video Editim</span><b>✦</b><span data-i18n="n2">Përmbajtje për Rrjete Sociale</span><b>✦</b><span data-i18n="n3">Dizajn Grafik</span><b>✦</b><span data-i18n="n4">Koncepte Logo</span><b>✦</b><span data-i18n="n5">Koncepte Sportive</span><b>✦</b><span data-i18n="n6">Bashkëpunim Kreativ</span>
+<b>✦</b><span data-i18n="n1">Video Editim</span><b>✦</b><span data-i18n="n2">Përmbajtje për Rrjete Sociale</span><b>✦</b><span data-i18n="n3">Dizajn Grafik</span><b>✦</b><span data-i18n="n4">Koncepte Logo</span><b>✦</b><span data-i18n="n5">Koncepte Sportive</span><b>✦</b><span data-i18n="n6">Bashkëpunim Kreativ</span>
+</div></div>
 <section id="work"><div class="container"><div class="section-head"><div><div class="eyebrow">Featured Work</div><h2 class="section-title">Video <span>Editing</span></h2></div><p class="section-sub" data-i18n="videoIntro">Videot janë të vendosura në autoplay, muted dhe loop që me u lëshu nonstop pa pas nevojë me kliku.</p></div><div class="video-row">
 <article class="video-card"><video autoplay muted loop playsinline preload="auto" src="assets/videos/duaa.mp4" autoplay muted loop playsinline preload="auto" ></video><div class="card-body"><h3>DUAA</h3><p>Perfume Store • Social Media Video</p></div></article><article class="video-card"><video autoplay muted loop playsinline preload="auto" src="assets/videos/mrstiff.mp4" autoplay muted loop playsinline preload="auto" ></video><div class="card-body"><h3>Mr. Stiff</h3><p>Product Advertisement • Video Editing</p></div></article><article class="video-card"><video autoplay muted loop playsinline preload="auto" src="assets/videos/nina.mp4" autoplay muted loop playsinline preload="auto" ></video><div class="card-body"><h3>Nina</h3><p>Freelance Product Showcase</p></div></article><article class="video-card"><video autoplay muted loop playsinline preload="auto" src="assets/videos/artur10.mp4" autoplay muted loop playsinline preload="auto" ></video><div class="card-body"><h3>Artur10</h3><p>Product Reviews & Promotional Content</p></div></article><article class="video-card"><video autoplay muted loop playsinline preload="auto" src="assets/videos/telesport.mp4" autoplay muted loop playsinline preload="auto" ></video><div class="card-body"><h3>TeleSport</h3><p>Football & Sports Social Media Content</p></div></article><article class="video-card"><video autoplay muted loop playsinline preload="auto" src="assets/videos/tripod.mp4" autoplay muted loop playsinline preload="auto" ></video><div class="card-body"><h3>Tripod LED</h3><p>Product Demonstration • Motion Graphics</p></div></article>
 </div></div></section>
@@ -113,8 +134,8 @@ section{padding:90px 0;border-top:1px solid rgba(255,255,255,.07)}.section-head{
   </div>
 </section>
 
-<section id="about"><div class="container about-grid"><div class="about-photo"><img src="assets/images/portrait.png" alt="Endrit Akinci portrait"></div><div class="about-card"><div class="eyebrow" data-i18n="aboutEyebrow">Rreth meje</div><h2 class="section-title" data-lang-content="sq">Kush <span>Jam</span></h2><h2 class="section-title" data-lang-content="en">About <span>Me</span></h2><p class="about-text" data-i18n="aboutText">Jam Endrit Akinci, Video Editor & Creative Content Creator. Puna ime kryesore është video editing, por punoj edhe me content creation, social media content, social media design, logo concepts dhe ide vizuale për brende. Kam përvojë praktike me klientë freelance, produkte, sport content dhe dizajne për social media. Qëllimi im është me kriju përmbajtje që duket mirë, komunikon qartë dhe ndihmon biznesin me u prezantu ma profesionalisht online.</p><div class="pill-grid"><span class="pill">Video Editing</span><span class="pill">Content Creation</span><span class="pill">Social Media Content</span><span class="pill">Social Media Design</span><span class="pill">Logo Concepts</span><span class="pill">Creative Collaboration</span></div></div></div></section>
-<section id="contact"><div class="container contact-card"><div><div class="eyebrow">Get in touch</div><h2 class="section-title" data-lang-content="sq">Për <span>Bashkëpunim</span></h2><h2 class="section-title" data-lang-content="en">Let's <span>Work</span></h2><p class="section-sub" data-i18n="contactText">I hapur për bashkëpunime në video editing, content creation, social media content dhe projekte kreative.</p></div><div class="contact-links"><a class="btn primary" href="mailto:videoeditingendrit@gmail.com">videoeditingendrit@gmail.com</a><a class="btn" href="https://www.instagram.com/endritakinci_/?hl=en" target="_blank">@endritakinci_</a><a class="btn" href="https://www.linkedin.com/in/endrit-akinci-7a831b325/" target="_blank">LinkedIn</a></div></div></section><footer>© 2026 Endrit Akinci — Video Editor & Creative Content Creator</footer>
+<section id="about"><div class="container about-grid"><div class="about-photo"><div class="photo-frame"><img src="assets/images/portrait.png" alt="Endrit Akinci portrait"></div><svg class="photo-scribble" viewBox="0 0 200 200" aria-hidden="true"><path d="M100,14 C132,9 168,28 182,64 C196,101 178,142 147,168 C116,193 68,190 36,161 C6,132 4,88 22,56 C40,24 70,19 100,14 Z"/></svg></div><div class="about-card"><div class="eyebrow" data-i18n="aboutEyebrow">Rreth meje</div><h2 class="section-title" data-lang-content="sq">Kush <span>Jam</span></h2><h2 class="section-title" data-lang-content="en">About <span>Me</span></h2><p class="about-text" data-i18n="aboutText">Jam Endrit Akinci, Video Editor & Creative Content Creator. Puna ime kryesore është video editing, por punoj edhe me content creation, social media content, social media design, logo concepts dhe ide vizuale për brende. Kam përvojë praktike me klientë freelance, produkte, sport content dhe dizajne për social media. Qëllimi im është me kriju përmbajtje që duket mirë, komunikon qartë dhe ndihmon biznesin me u prezantu ma profesionalisht online.</p><div class="pill-grid"><span class="pill">Video Editing</span><span class="pill">Content Creation</span><span class="pill">Social Media Content</span><span class="pill">Social Media Design</span><span class="pill">Logo Concepts</span><span class="pill">Creative Collaboration</span></div></div></div></section>
+<section id="contact"><div class="container contact-card"><div><div class="eyebrow">Get in touch</div><h2 class="section-title" data-lang-content="sq">Për <span>Bashkëpunim</span></h2><h2 class="section-title" data-lang-content="en">Let's <span>Work</span></h2><p class="section-sub" data-i18n="contactText">I hapur për bashkëpunime në video editing, content creation, social media content dhe projekte kreative.</p></div><div class="contact-links"><a class="btn primary" href="mailto:videoeditingendrit@gmail.com">videoeditingendrit@gmail.com</a><a class="btn" href="https://www.instagram.com/endritakinci_/?hl=en" target="_blank">@endritakinci_</a><a class="btn" href="https://www.linkedin.com/in/endrit-akinci-7a831b325/" target="_blank">LinkedIn</a></div></div></section><div class="torn-divider"></div><footer>© 2026 Endrit Akinci — Video Editor & Creative Content Creator</footer>
 <script>
 const tr={
 sq:{
@@ -182,4 +203,46 @@ function enterSite(lang){applyLang(lang);const gate=document.getElementById("gat
 function toggleLang(){applyLang(document.body.classList.contains("lang-sq")?"en":"sq")}
 function startVideos(){document.querySelectorAll("video").forEach(v=>{v.muted=true;v.loop=true;v.playsInline=true;v.play().catch(()=>{})})}
 window.addEventListener("load",startVideos);document.addEventListener("visibilitychange",()=>{if(!document.hidden)startVideos()});
+
+(function(){
+  const wrap=document.querySelector(".about-photo");
+  if(!wrap) return;
+  const img=wrap.querySelector(".photo-frame img");
+  const path=wrap.querySelector(".photo-scribble path");
+  if(path){
+    const len=path.getTotalLength();
+    path.style.strokeDasharray=len;
+    path.style.strokeDashoffset=len;
+    const io=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          path.style.strokeDashoffset="0";
+          io.unobserve(entry.target);
+        }
+      });
+    },{threshold:.35});
+    io.observe(wrap);
+  }
+  if(!img) return;
+  const canHover=window.matchMedia("(hover:hover) and (pointer:fine)").matches;
+  if(canHover){
+    wrap.addEventListener("mousemove",e=>{
+      const r=wrap.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-0.5;
+      const y=(e.clientY-r.top)/r.height-0.5;
+      img.style.transform=`rotateY(${x*16}deg) rotateX(${-y*16}deg) scale(1.04)`;
+    });
+    wrap.addEventListener("mouseleave",()=>{img.style.transform="rotateY(0) rotateX(0) scale(1)"});
+  }else{
+    const onScroll=()=>{
+      const r=wrap.getBoundingClientRect();
+      const center=r.top+r.height/2;
+      const progress=(window.innerHeight/2-center)/(window.innerHeight/2);
+      const clamped=Math.max(-1,Math.min(1,progress));
+      img.style.transform=`rotateY(${clamped*14}deg) scale(1.02)`;
+    };
+    window.addEventListener("scroll",onScroll,{passive:true});
+    onScroll();
+  }
+})();
 </script></body></html>

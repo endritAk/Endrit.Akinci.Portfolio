@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Endrit Akinci — Portfolio 2026",
+      "hasCanvas": false,
+      "bodyTextLen": 4407,
+      "bodyTextHash": "1ccce9e1d77a9f87f61938bb85e878e521dc045b751a2aa88d4a5555ef0fa884",
+      "bodyTextPrefix": "Skip to work ENDRIT AKINCI WORK ABOUT CONTACT VIDEO EDITOR / CRE",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Endrit Akinci — Portfolio 2026",
+      "hasCanvas": false,
+      "bodyTextLen": 2784,
+      "bodyTextHash": "089dc9060f0032385265e1f1dac9d4a546895918f96cb70d5d8597e37b0269f6",
+      "bodyTextPrefix": "Skip to work ENDRIT AKINCI MENU WORK ABOUT CONTACT VIDEO EDITOR ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

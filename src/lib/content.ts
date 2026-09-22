@@ -1,6 +1,4 @@
-export const VIDEO_CDN =
-  "https://endritak.github.io/Endrit.Akinci.Portfolio/videos";
-
+export const VIDEO_CDN = "/public/videos";
 export type Aspect = "9:16" | "16:9";
 export type Kind = "edit" | "ai";
 export type Size = "sm" | "md" | "lg" | "wide";

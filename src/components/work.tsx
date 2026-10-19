@@ -134,7 +134,7 @@ export function AiWork() {
       id="ai"
       kicker="02 / AI WORK"
       title="AI VIDEO"
-      copy="Architectural and property films — generated, directed and edited as finished pieces."
+      copy="Architectural films, property visuals and AI UGC ads — generated, directed and edited as finished pieces."
       projects={AI_PROJECTS}
     />
   );
